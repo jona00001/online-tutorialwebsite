@@ -1,0 +1,238 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,*:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    border: 0;
+}
+
+:root{
+    --color-primary:#6c63cf;
+    --color-sucess:#00bf8e;
+    --color-waring:#f7c94b;
+    --color-danger:#f75842;
+    --color-danger-variant:rgba(247, 88, 66, 0.4);
+    --color-white:#ffffff;
+    --color-light:rgba(255, 255, 255, 0.7);
+    --color-black:#000;
+    --color-bg:#1f2641;
+    --color-bg1:#2e3267;
+    --color-b2:#424890;
+
+    --container-width-lg:80%;
+    --container-width-md:90%;
+    --container-width-sm:94%;
+
+    --transition:all 400ms ease;
+}
+
+
+.about-achievements{
+    margin-top: 3rem;
+}
+
+.about-achievements-container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 5rem;
+}
+.achievement-right{
+    margin: 1.6rem 0 2.5rem;
+}
+
+.achievement--cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.5rem;
+}
+
+.achievement--card{
+background: var(--color-bg1);
+border-radius: 4px;
+text-align: center;
+padding: 1.6rem;
+transition: var(--transition);
+margin-top: 2rem;
+}
+
+.achievement--card:hover{
+    background: var(--color-b2);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+
+.achievement--icon{
+    padding: 0.6rem;
+    background: var(--color-danger-variant);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.achievement--card:nth-child(2) .achievement--icon{
+    background-color: var(--color-sucess);
+}
+
+.achievement--card:nth-child(3) .achievement--icon{
+    background: var(--color-waring);
+}
+
+.achievement--card h3{
+    margin-top: 1rem;
+}
+
+/* ************************************************team */
+.teams{
+    background-color: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team--container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.team-member{
+    padding: 2rem;
+    background: var(--color-b2);
+    border: 1px solid transparent;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member:hover{
+border: 1px solid  var(--color-primary);
+background: transparent;
+}
+
+.team-memeber-image img{
+filter: saturate(0);
+}
+
+.team-memeber-image:hover img{
+    filter: saturate(1);  
+}
+
+.team-member-info *{
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.team-member-info p{
+    color: var(--color-light);
+}
+
+.team-member-socials{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    right: -100%;
+    background: var(--color-primary);
+    border-radius: 1rem 0 0 1rem;
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.team-member:hover .team-member-socials{
+right: 0;
+
+}
+
+.team-member-socials a{
+    padding: 1rem;
+}
+
+
+/****************************************************************** media for table */
+
+@media screen and ( max-width: 1024px) {
+.about-achievements{
+    margin-top: 2rem;
+}
+
+.about-achievements-container{
+    grid-template-columns: 1fr;
+    gap:4rem;
+}
+.achievement-right h1{
+    text-align: center;
+}
+
+.achievement-left{
+    margin: 0 auto;
+    width: 60%;
+}
+
+.team--container{
+    grid-template-columns: repeat(3,1fr);
+    gap:1.5rem;
+}
+
+.team-member{
+    padding: 1rem;
+}
+
+}
+
+
+/****************************************************************** media for phone */
+
+@media screen and ( max-width: 600px) {
+
+    .achievement--cards{
+     gap: 0;
+     width: 70%;
+    }
+
+    .achievement--card{
+        border-radius: 0;
+    }
+
+    .achievement-right p{
+        font-size: small;
+        margin-right: 1rem;
+        text-align: justify;
+    }
+
+    .about-achievements-container{
+        grid-template-columns: 1fr;
+        gap:0;
+    }
+
+
+
+
+    .team--container{
+        grid-template-columns: 1fr 1fr;
+        gap:0.7rem;
+    }
+
+    .about-achievements-container{
+        grid-template-columns: 1fr;
+        gap:0.7rem;
+    }
+
+    .achievement-right h1{
+        text-align: center;
+    }
+
+    .team-member{
+        padding: 0;
+    }
+    
+.team-member p{
+    margin-bottom: 1.5rem;
+}
+}
+
+
+
